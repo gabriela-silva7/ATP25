@@ -1,0 +1,22 @@
+#Adivinhar um número
+import random
+
+tentativas = 1
+min = 0
+max = 100
+n1 = random.randint(min, max)
+n2 = int(input('Em que número estou a pensar?'))
+
+while n2 != n1 and tentativas <= 10:
+    if n2 < n1:
+        print(f'O número em que estou a pensar é maior que {n2}!')
+        n2 = int(input('O número em que estou a pensar é maior! Qual é?'))
+        tentativas = tentativas + 1
+    elif n2 > n1:
+        print(f'O número em que estou a pensar é menor {n2}!')
+        n2 = int(input('O número em que estou a pensar é menor! Qual é?'))
+        tentativas = tentativas + 1
+if n2 == n1:
+    print (f'É esse o número em que estou a pensar! Conseguiste acertar em {tentativas} tentativas.')
+else: 
+    print ('Esgotaste as tuas tentativas.')
